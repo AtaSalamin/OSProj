@@ -1,3 +1,4 @@
+#made by Ata Salamin
 import heapq
 from collections import deque
 import matplotlib.pyplot as plt
@@ -37,7 +38,7 @@ def print_results(processes, gantt_chart, total_time):
     cpu_utilization = (total_time - sum(p.waiting for p in processes)) / total_time * 100
     print(f"CPU Utilization: {cpu_utilization:.2f}%")
 
-
+#made by Ata Salamin
 def plot_gantt_chart(gantt_chart, title, processes):
     fig, gnt = plt.subplots(figsize=(15, 8))
 
@@ -75,7 +76,7 @@ def plot_gantt_chart(gantt_chart, title, processes):
         gnt.text(start, y_ticks[pid - 1] + 5, f"{start}", ha='center', va='bottom', color='black', fontsize=8)
         gnt.text(end, y_ticks[pid - 1] + 5, f"{end}", ha='center', va='bottom', color='black', fontsize=8)
 
-    # Add legend
+    #made by Ata Salamin
     patches = [mpatches.Patch(color=color, label=f'P{pid}') for pid, color in process_colors.items()]
     idle_patch = mpatches.Patch(color='lightgray', label='Idle')
     plt.legend(handles=patches + [idle_patch], loc='upper right', title="Processes")
@@ -84,7 +85,7 @@ def plot_gantt_chart(gantt_chart, title, processes):
     plt.tight_layout()
     plt.show()
 
-    # Save plot as image
+    # Save plot as image also made by Ata Salamin
     fig.savefig(f"{title.replace(' ', '_')}.png")
 
 
@@ -174,7 +175,7 @@ def read_data_from_file(filename):
             burst = int(parts[2])
             data.append((pid, arrival, burst))
     return data
-
+#made by Ata Salamin
 data_file='processes.txt'
 data = read_data_from_file(data_file)
 
